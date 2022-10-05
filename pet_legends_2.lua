@@ -27,7 +27,7 @@ RewardTab:AddToggle({
 })
 
 RewardTab:AddToggle({
-        Name = "VIP Reward - gamepass required",
+        Name = "VIP Reward",
 	Default = true,
         Save = true,
         Flag = "toggle",
@@ -56,7 +56,12 @@ PlayerTab:AddSlider({
 		hum.WalkSpeed = v
 	end    
 })
-
+PlayerTab:AddButton({
+	Name = "AutoClicker - open AutoClicker by Ezpi",
+	Callback = function()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/JustEzpi/ROBLOX-Scripts/main/ROBLOX_AutoClicker"))()
+        end    
+})
 PlayerTab:AddToggle({
 	Name = "Anti AFK",
 	Default = true,
