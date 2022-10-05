@@ -2,6 +2,7 @@ if game.PlaceId == 8864518888 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Pet Legends 2 by Nalathan", HidePremium = true, IntroEnabled = false,SaveConfig = false, ConfigFolder = "Pet Legends 2"})
 local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
+local vu = game:GetService("VirtualUser")
 
 local TeleportTab = Window:MakeTab({
 	Name = "Teleports",
@@ -9,13 +10,13 @@ local TeleportTab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local WalkspeedTab = Window:MakeTab({
-	Name = "Walkspeed",
+local PlayerTab = Window:MakeTab({
+	Name = "Player",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-WalkspeedTab:AddSlider({
+PlayerTab:AddSlider({
 	Name = "WalkSpeed",
 	Min = 18,
 	Max = 200,
@@ -26,6 +27,18 @@ WalkspeedTab:AddSlider({
 	Callback = function(v)
 		hum.WalkSpeed = v
 	end    
+})
+
+PlayerTab:AddToggle({
+	Name = "Anti AFK",
+	Default = false,
+	Callback = function()
+	game:GetService("Players").LocalPlayer.Idled:connect(function()
+        vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+        wait(1)
+        vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+	end   
 })
 
 TeleportTab:AddButton({
