@@ -27,7 +27,7 @@ RewardTab:AddToggle({
 })
 
 RewardTab:AddToggle({
-        Name = "VIP Reward",
+        Name = "VIP Reward - gamepass required",
 	Default = true,
         Save = true,
         Flag = "toggle",
