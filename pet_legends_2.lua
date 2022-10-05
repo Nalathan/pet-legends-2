@@ -24,8 +24,8 @@ PlayerTab:AddSlider({
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
 	ValueName = "Speed",
-    	Save = true,
-    	Flag = "slider",
+    Save = true,
+    Flag = "slider",
 	Callback = function(v)
 		hum.WalkSpeed = v
 	end    
@@ -34,8 +34,8 @@ PlayerTab:AddSlider({
 PlayerTab:AddToggle({
 	Name = "Anti AFK",
 	Default = false,
-    	Save = true,
-    	Flag = "toggle",
+    Save = true,
+    Flag = "toggle",
 	Callback = function(Value)
 		game:GetService("Players").LocalPlayer.Idled:connect(function()
         vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
@@ -44,11 +44,20 @@ PlayerTab:AddToggle({
 end)
 	end   
 })
-
+TeleportTab:AddButton({
+	Name = "VIP",
+	Callback = function()
+        local CFrameEnd = CFrame.new(game.Workspace._MAP_.Teleports.W1_Vip.Position + Vector3.new(0,3,0))
+        local Time = 0
+        local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+        tweent:Play()
+        tweent.Completed:Wait()
+  	end    
+})
 TeleportTab:AddButton({
 	Name = "Eggs",
 	Callback = function()
-        local CFrameEnd = CFrame.new(-1214.82, 36.686, 327.882)
+        local CFrameEnd = CFrame.new(game.Workspace._MAP_.Teleports.W1_Z1.Position + Vector3.new(0,3,0))
         local Time = 0
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
@@ -58,7 +67,7 @@ TeleportTab:AddButton({
 TeleportTab:AddButton({
 	Name = "Fuse",
 	Callback = function()
-        local CFrameEnd = CFrame.new(-1192.07, 38.0577, -80.812)
+        local CFrameEnd = CFrame.new(game.Workspace._MAP_.Teleports.W1_Z2.Position + Vector3.new(0,3,0))
         local Time = 0
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
@@ -68,7 +77,7 @@ TeleportTab:AddButton({
 TeleportTab:AddButton({
 	Name = "Upgrade",
 	Callback = function()
-        local CFrameEnd = CFrame.new(-1198.57, 40.933, -387.312)
+        local CFrameEnd = CFrame.new(game.Workspace._MAP_.Teleports.W1_Z3.Position + Vector3.new(0,3,0))
         local Time = 0
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
@@ -78,7 +87,7 @@ TeleportTab:AddButton({
 TeleportTab:AddButton({
 	Name = "Frozen World - Zone 1",
 	Callback = function()
-        local CFrameEnd = CFrame.new(-1189.07, 44.0863, -653.1)
+        local CFrameEnd = CFrame.new(game.Workspace._MAP_.Teleports.W2_Z1.Position + Vector3.new(0,3,0))
         local Time = 0
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
@@ -88,7 +97,7 @@ TeleportTab:AddButton({
 TeleportTab:AddButton({
 	Name = "Frozen World - Zone 2",
 	Callback = function()
-        local CFrameEnd = CFrame.new(-1192.07, 47.0074, -955.147)
+        local CFrameEnd = CFrame.new(game.Workspace._MAP_.Teleports.W2_Z2.Position + Vector3.new(0,3,0))
         local Time = 0
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
@@ -98,7 +107,7 @@ TeleportTab:AddButton({
 TeleportTab:AddButton({
 	Name = "Frozen World - Chest",
 	Callback = function()
-        local CFrameEnd = CFrame.new(-1198.57, 50.0082, -1249.62)
+        local CFrameEnd = CFrame.new(game.Workspace._MAP_.Teleports.W2_Z3.Position + Vector3.new(0,3,0))
         local Time = 0
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
