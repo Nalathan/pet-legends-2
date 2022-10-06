@@ -33,7 +33,7 @@ local RewardTab = Window:MakeTab({
 })
 RewardTab:AddToggle({
         Name = "Rank Reward",
-	Default = true,
+	Default = false,
         Save = true,
         Flag = "toggle",
 	Callback = function(Value)
@@ -43,13 +43,13 @@ RewardTab:AddToggle({
 })
 RewardTab:AddToggle({
         Name = "VIP Reward",
-	Default = true,
+	Default = false,
         Save = true,
         Flag = "toggle",
 	Callback = function(Value)
                 _G.VipRedeem = Value
                 VipRedeem()
-end
+        end
 })
 local PlayerTab = Window:MakeTab({
 	Name = "Player",
