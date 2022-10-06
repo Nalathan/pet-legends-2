@@ -1,6 +1,6 @@
 if game.PlaceId == 8864518888 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Pet Legends 2 by Nalathan", HidePremium = true, IntroEnabled = false,SaveConfig = false, ConfigFolder = "Pet Legends 2"})
+local Window = OrionLib:MakeWindow({Name = "Pet Legends 2 by Nali Games", HidePremium = true, IntroEnabled = false, SaveConfig = true, ConfigFolder = "Pet_Legends_2"})
 local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
 local vu = game:GetService("VirtualUser")
 
@@ -9,13 +9,11 @@ local TeleportTab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-
 local RewardTab = Window:MakeTab({
 	Name = "Redeem Reward",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-
 RewardTab:AddToggle({
         Name = "Rank Reward",
 	Default = true,
@@ -28,7 +26,6 @@ RewardTab:AddToggle({
                 end
 	end
 })
-
 RewardTab:AddToggle({
         Name = "VIP Reward",
 	Default = true,
@@ -41,13 +38,11 @@ RewardTab:AddToggle({
 	end
 end
 })
-
 local PlayerTab = Window:MakeTab({
 	Name = "Player",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-
 PlayerTab:AddSlider({
 	Name = "WalkSpeed",
 	Min = 18,
@@ -78,8 +73,8 @@ PlayerTab:AddToggle({
         vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
         wait(1)
         vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end)
-	end
+        end)
+end
 })
 TeleportTab:AddButton({
 	Name = "VIP",
