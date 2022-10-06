@@ -22,7 +22,9 @@ RewardTab:AddToggle({
         Save = true,
         Flag = "toggle",
 	Callback = function(Value)
+        while true do
 	game:GetService("ReplicatedStorage").Game.Events.ReddemRankReward:InvokeServer()
+        wait(28800)
 	end   
 })
 
@@ -32,7 +34,9 @@ RewardTab:AddToggle({
         Save = true,
         Flag = "toggle",
 	Callback = function(Value)
+        while true do
 	game:GetService("ReplicatedStorage").Game.Events.ReddemVIPReward:InvokeServer()
+        wait(28800)
 	end   
 })
 
@@ -53,11 +57,11 @@ PlayerTab:AddSlider({
         Save = true,
         Flag = "slider",
 	Callback = function(v)
-		hum.WalkSpeed = v
+	hum.WalkSpeed = v
 	end    
 })
 PlayerTab:AddButton({
-	Name = "AutoClicker - open AutoClicker by Ezpi",
+	Name = "AutoClicker",
 	Callback = function()
         loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/JustEzpi/ROBLOX-Scripts/main/ROBLOX_AutoClicker"))()
         end    
