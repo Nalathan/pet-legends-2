@@ -1,6 +1,6 @@
 if game.PlaceId == 8864518888 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Pet Legends 2 by Nali Games", HidePremium = true, IntroEnabled = false, SaveConfig = true, ConfigFolder = "Pet_Legends_2"})
+local Window = OrionLib:MakeWindow({Name = "Pet Legends 2 by Nali Games", HidePremium = true, IntroEnabled = true, SaveConfig = true, ConfigFolder = "Pet_Legends_2"})
 local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
 local vu = game:GetService("VirtualUser")
 
