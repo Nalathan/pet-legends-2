@@ -22,10 +22,11 @@ RewardTab:AddToggle({
         Save = true,
         Flag = "toggle",
 	Callback = function(Value)
-        while true do
-	game:GetService("ReplicatedStorage").Game.Events.ReddemRankReward:InvokeServer()
-        wait(28800)
-	end   
+                while Default == true do
+                game:GetService("ReplicatedStorage").Game.Events.ReddemRankReward:InvokeServer()
+                wait(28800)
+                end
+	end
 })
 
 RewardTab:AddToggle({
@@ -34,10 +35,11 @@ RewardTab:AddToggle({
         Save = true,
         Flag = "toggle",
 	Callback = function(Value)
-        while true do
-	game:GetService("ReplicatedStorage").Game.Events.ReddemVIPReward:InvokeServer()
-        wait(28800)
-	end   
+                while Default == true do
+	        game:GetService("ReplicatedStorage").Game.Events.ReddemVIPReward:InvokeServer()
+                wait(28800)
+	end
+end
 })
 
 local PlayerTab = Window:MakeTab({
@@ -57,14 +59,14 @@ PlayerTab:AddSlider({
         Save = true,
         Flag = "slider",
 	Callback = function(v)
-	hum.WalkSpeed = v
-	end    
+		hum.WalkSpeed = v
+	end
 })
 PlayerTab:AddButton({
 	Name = "AutoClicker",
 	Callback = function()
         loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/JustEzpi/ROBLOX-Scripts/main/ROBLOX_AutoClicker"))()
-        end    
+        end
 })
 PlayerTab:AddToggle({
 	Name = "Anti AFK",
@@ -77,7 +79,7 @@ PlayerTab:AddToggle({
         wait(1)
         vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
-	end   
+	end
 })
 TeleportTab:AddButton({
 	Name = "VIP",
@@ -87,7 +89,7 @@ TeleportTab:AddButton({
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
         tweent.Completed:Wait()
-  	end    
+  	end
 })
 TeleportTab:AddButton({
 	Name = "Eggs",
@@ -97,7 +99,7 @@ TeleportTab:AddButton({
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
         tweent.Completed:Wait()
-  	end    
+  	end
 })
 TeleportTab:AddButton({
 	Name = "Fuse",
@@ -107,7 +109,7 @@ TeleportTab:AddButton({
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
         tweent.Completed:Wait()
-  	end    
+  	end
 })
 TeleportTab:AddButton({
 	Name = "Upgrade",
@@ -117,7 +119,7 @@ TeleportTab:AddButton({
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
         tweent.Completed:Wait()
-  	end    
+  	end
 })
 TeleportTab:AddButton({
 	Name = "Frozen World - Zone 1",
@@ -127,7 +129,7 @@ TeleportTab:AddButton({
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
         tweent.Completed:Wait()
-  	end    
+  	end
 })
 TeleportTab:AddButton({
 	Name = "Frozen World - Zone 2",
@@ -137,7 +139,7 @@ TeleportTab:AddButton({
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
         tweent.Completed:Wait()
-  	end    
+  	end
 })
 TeleportTab:AddButton({
 	Name = "Frozen World - Chest",
@@ -147,7 +149,7 @@ TeleportTab:AddButton({
         local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
         tweent:Play()
         tweent.Completed:Wait()
-  	end    
+  	end
 })
 end
 OrionLib:Init()
