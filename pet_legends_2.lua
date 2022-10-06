@@ -4,6 +4,23 @@ local Window = OrionLib:MakeWindow({Name = "Pet Legends 2 by Nali Games", HidePr
 local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
 local vu = game:GetService("VirtualUser")
 
+_G.RankRedeem = true
+_G.VipRedeem = true
+
+function RankRedeem()
+        while _G.RankRedeem == true do
+                game:GetService("ReplicatedStorage").Game.Events.ReddemRankReward:InvokeServer()
+                wait(28800)
+        end
+end
+
+function VipRedeem()
+        while _G.VipRedeem == true do
+                game:GetService("ReplicatedStorage").Game.Events.ReddemVIPReward:InvokeServer()
+                wait(28800)
+        end
+end
+
 local TeleportTab = Window:MakeTab({
 	Name = "Teleports",
 	Icon = "rbxassetid://4483345998",
@@ -20,10 +37,8 @@ RewardTab:AddToggle({
         Save = true,
         Flag = "toggle",
 	Callback = function(Value)
-                while Default == true do
-                game:GetService("ReplicatedStorage").Game.Events.ReddemRankReward:InvokeServer()
-                wait(28800)
-                end
+                _G.RankRedeem = Value
+                RankRedeem()
 	end
 })
 RewardTab:AddToggle({
@@ -32,10 +47,8 @@ RewardTab:AddToggle({
         Save = true,
         Flag = "toggle",
 	Callback = function(Value)
-                while Default == true do
-	        game:GetService("ReplicatedStorage").Game.Events.ReddemVIPReward:InvokeServer()
-                wait(28800)
-	end
+                _G.VipRedeem = Value
+                VipRedeem()
 end
 })
 local PlayerTab = Window:MakeTab({
