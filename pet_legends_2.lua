@@ -1,4 +1,4 @@
-if game.PlaceId == 8864518888 then
+--if game.PlaceId == 8864518888 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Pet Legends 2 by Nali Games", HidePremium = true, IntroEnabled = true, SaveConfig = true, ConfigFolder = "Pet_Legends_2"})
 local hum = game:GetService("Players").LocalPlayer.Character.Humanoid
@@ -10,14 +10,14 @@ _G.VipRedeem = true
 function RankRedeem()
         while _G.RankRedeem == true do
                 game:GetService("ReplicatedStorage").Game.Events.ReddemRankReward:InvokeServer()
-                wait(28800)
+                wait(1)
         end
 end
 
 function VipRedeem()
         while _G.VipRedeem == true do
                 game:GetService("ReplicatedStorage").Game.Events.ReddemVIPReward:InvokeServer()
-                wait(28800)
+                wait(1)
         end
 end
 
@@ -159,5 +159,5 @@ TeleportTab:AddButton({
         tweent.Completed:Wait()
   	end
 })
-end
+--end
 OrionLib:Init()
