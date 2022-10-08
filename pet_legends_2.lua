@@ -159,5 +159,35 @@ TeleportTab:AddButton({
         tweent.Completed:Wait()
   	end
 })
+TeleportTab:AddButton({
+	Name = "Welt 3 - Zone 1",
+	Callback = function()
+        local CFrameEnd = CFrame.new(game.Workspace._MAP_.Teleports.W3_Z1.Position + Vector3.new(0,3,0))
+        local Time = 0
+        local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+        tweent:Play()
+        tweent.Completed:Wait()
+  	end
+})
+TeleportTab:AddButton({
+	Name = "Welt 3 - Zone 2",
+	Callback = function()
+        local CFrameEnd = CFrame.new(game.Workspace._MAP_.Teleports.W3_Z2.Position + Vector3.new(0,3,0))
+        local Time = 0
+        local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+        tweent:Play()
+        tweent.Completed:Wait()
+  	end
+})
+TeleportTab:AddButton({
+	Name = "Welt 3 - Zone 3",
+	Callback = function()
+        local CFrameEnd = CFrame.new(game.Workspace._MAP_.Teleports.W3_Z3.Position + Vector3.new(0,3,0))
+        local Time = 0
+        local tweent =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+        tweent:Play()
+        tweent.Completed:Wait()
+  	end
+})
 --end
 OrionLib:Init()
